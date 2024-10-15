@@ -37,7 +37,7 @@ public class mailController {
     @PostMapping("/sendMessageFile")
     public ResponseEntity<?> reciveRequestEmailWithFile(@ModelAttribute EmailFileDTO emailFileDTO){
        try{
-           String filename = emailFileDTO.getFile().getName();
+           String filename = emailFileDTO.getFile().getOriginalFilename()   ;
            Path path = Paths.get("src/mail/resources/files/" + filename);
 
            Files.createDirectories(path.getParent());

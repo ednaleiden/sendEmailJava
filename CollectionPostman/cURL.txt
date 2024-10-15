@@ -1,0 +1,13 @@
+curl --location 'http://localhost:8080/api/v0/email/sendMessage' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "user": ["prueba@gmail.com"],
+    "subject": "peuba envio",
+    "message": "prueba enviada"
+}'
+
+curl --location 'http://localhost:8080/api/v0/email/sendMessageFile' \
+--form 'user=" prueba@gmail.com"' \
+--form 'subject="adjunto"' \
+--form 'message="peuba envio con adjunto"' \
+--form 'file=@"/D:/descargas/prueb.jpeg"'

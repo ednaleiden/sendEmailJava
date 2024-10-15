@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "ec791f9d-f193-4754-86c2-b38f857edc3a",
+		"name": "Send Email",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20595720"
+	},
+	"item": [
+		{
+			"name": "send_message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": [\"prueba@gmail.com\"],\r\n    \"subject\": \"peuba envio\",\r\n    \"message\": \"prueba enviada\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v0/email/sendMessage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v0",
+						"email",
+						"sendMessage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send_email_file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user",
+							"value": " prueba@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "subject",
+							"value": "adjunto",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "peuba envio con adjunto",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/descargas/WhatsApp Image 2024-10-14 at 5.09.21 PM.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v0/email/sendMessageFile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v0",
+						"email",
+						"sendMessageFile"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
